@@ -1,0 +1,72 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "title": "🎨 Design",
+      "description": "Création visuelle innovante avec glassmorphism et cyberpunk esthétique.",
+      "icon": "palette"
+    },
+    {
+      "id": 2,
+      "title": "⚙️ Développement",
+      "description": "Code frontend performant en Vanilla JS. Zero dépendances.",
+      "icon": "code"
+    },
+    {
+      "id": 3,
+      "title": "📱 Web Moderne",
+      "description": "PWA complète, responsive design, SEO optimisé.",
+      "icon": "mobile"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "VentiStudio v6",
+      "category": "web",
+      "description": "Landing page avec glassmorphism et animations fluides",
+      "year": 2025
+    },
+    {
+      "id": 2,
+      "title": "Portfolio Dynamique",
+      "category": "web",
+      "description": "Galerie interactive avec filtrage et lazy loading",
+      "year": 2025
+    },
+    {
+      "id": 3,
+      "title": "Design System",
+      "category": "design",
+      "description": "Composants réutilisables et variables CSS",
+      "year": 2024
+    }
+  ],
+  "team": [
+    {
+      "id": 1,
+      "name": "Lùka Guyonvarch",
+      "role": "Creative Director",
+      "bio": "Concepteur visuel passionné par l'innovation numérique"
+    },
+    {
+      "id": 2,
+      "name": "Venti",
+      "role": "Lead Developer",
+      "bio": "Expert en performance web et architecture frontend"
+    },
+    {
+      "id": 3,
+      "name": "Hikari Umaishi",
+      "role": "Product Manager",
+      "bio": "Visionnaire et leader de projet chez Umaishi Corp"
+    }
+  ],
+  "seo": {
+    "title": "VentiStudio v6 – Créativité sans limites",
+    "description": "Plateforme créative, éthique et performante. Design futuriste avec glassmorphism et animations fluides.",
+    "keywords": ["design", "web", "studio", "créatif", "futuriste"],
+    "author": "Hikari Umaishi",
+    "organization": "VentiStudio / Umaishi Corp"
+  }
+}
