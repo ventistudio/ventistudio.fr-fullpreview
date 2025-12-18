@@ -1,0 +1,24 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Build
+        run: echo "Building VentiStudio v6..."
+      
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+      
+      - name: Deploy to Vercel
+        run: echo "Deploying to Vercel..."
+        # Add Vercel deployment config if needed

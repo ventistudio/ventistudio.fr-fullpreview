@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Disallow: /v5-archive/
+Disallow: /*.json
+Disallow: /.git
+
+Sitemap: https://ventistudio.fr/sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
