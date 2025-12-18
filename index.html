@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VentiStudio v6 - Plateforme créative, éthique et sécurisée. Design futuriste avec glassmorphism et animations fluides.">
+    <meta property="og:title" content="VentiStudio v6 – Créativité sans limites">
+    <meta property="og:description" content="Landing page, portfolio et présentation interactive avec design moderne et performant.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ventistudio.fr">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>VentiStudio v6 – Créativité sans limites | Glassmorphism Design</title>
+    <style>
+        :root {
+            --clr-primary: #00d9ff;
+            --clr-secondary: #8b5cf6;
+            --clr-bg-dark: #0f1419;
+            --clr-bg-darker: #1a1f2e;
+            --clr-text: #f5f5f7;
+            --clr-text-muted: #a1a1a6;
+            --ff-heading: 'Geist', 'Inter', sans-serif;
+            --ff-body: 'Inter', sans-serif;
+            --fs-base: 1rem;
+            --sp-md: 1.5rem;
+            --sp-lg: 2rem;
+            --radius-lg: 1rem;
+            --dur-normal: 250ms;
+            --easing: cubic-bezier(0.16, 1, 0.3, 1);
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--clr-bg-dark);
+            color: var(--clr-text);
+            font-family: var(--ff-body);
+            font-size: var(--fs-base);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--clr-bg-dark) 0%, var(--clr-bg-darker) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 217, 255, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(30px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            padding: var(--sp-lg);
+        }
+
+        h1 {
+            font-family: var(--ff-heading);
+            font-size: clamp(2.5rem, 10vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--clr-primary), var(--clr-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--clr-text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--clr-primary), var(--clr-secondary));
+            color: var(--clr-bg-dark);
+            border: none;
+            border-radius: var(--radius-lg);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--dur-normal) var(--easing);
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.3);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem var(--sp-lg);
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, var(--clr-primary), var(--clr-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all var(--dur-normal) var(--easing);
+        }
+
+        .service-card:hover {
+            border-color: var(--clr-primary);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--clr-primary);
+        }
+
+        .service-card p {
+            color: var(--clr-text-muted);
+            line-height: 1.6;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 6rem var(--sp-lg);
+            background: var(--clr-bg-darker);
+            max-width: 1280px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .portfolio-item {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all var(--dur-normal) var(--easing);
+            cursor: pointer;
+        }
+
+        .portfolio-item:hover {
+            border-color: var(--clr-primary);
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(0, 217, 255, 0.15);
+        }
+
+        .portfolio-item-header {
+            height: 200px;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(139, 92, 246, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .portfolio-item-body {
+            padding: 1.5rem;
+        }
+
+        .portfolio-item h4 {
+            margin-bottom: 0.5rem;
+            color: var(--clr-primary);
+        }
+
+        .portfolio-item p {
+            color: var(--clr-text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem var(--sp-lg);
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        input, textarea {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: 1rem;
+            color: var(--clr-text);
+            font-family: var(--ff-body);
+            backdrop-filter: blur(10px);
+            transition: all var(--dur-normal) var(--easing);
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--clr-primary);
+            background: rgba(0, 217, 255, 0.05);
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.2);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--clr-bg-darker);
+            border-top: 1px solid var(--glass-border);
+            padding: 2rem var(--sp-lg);
+            text-align: center;
+            color: var(--clr-text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .services, .portfolio, .contact {
+                padding: 3rem 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>VentiStudio v6</h1>
+            <p>Une plateforme créative, éthique et performante. Glassmorphism design avec animations fluides.</p>
+            <button class="btn" onclick="document.querySelector('.portfolio').scrollIntoView({behavior: 'smooth'})">
+                Découvrir les projets →
+            </button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2 class="section-title">Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>🎨 Design</h3>
+                <p>Création visuelle innovante avec glassmorphism et cyberpunk esthétique. Interfaces modernes et engageantes.</p>
+            </div>
+            <div class="service-card">
+                <h3>⚙️ Développement</h3>
+                <p>Code frontend performant en Vanilla JS. Zero dépendances, optimisé Lighthouse 95+, accessible WCAG AA.</p>
+            </div>
+            <div class="service-card">
+                <h3>📱 Web Moderne</h3>
+                <p>PWA complète, responsive design, SEO optimisé, animations fluides et expérience utilisateur premium.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio">
+        <h2 class="section-title">Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <div class="portfolio-item-header">🌐</div>
+                <div class="portfolio-item-body">
+                    <h4>VentiStudio.fr v6</h4>
+                    <p>Landing page avec glassmorphism, animations et design futuriste.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-item-header">🎯</div>
+                <div class="portfolio-item-body">
+                    <h4>Portfolio Dynamique</h4>
+                    <p>Galerie interactive avec filtrage, lazy loading et responsive design.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-item-header">✨</div>
+                <div class="portfolio-item-body">
+                    <h4>Design System</h4>
+                    <p>Variables CSS complètes, composants réutilisables et architecture maintenable.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-item-header">🚀</div>
+                <div class="portfolio-item-body">
+                    <h4>Performance</h4>
+                    <p>Lighthouse 95+, Core Web Vitals optimisés, caching intelligent.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-item-header">🔒</div>
+                <div class="portfolio-item-body">
+                    <h4>Sécurité</h4>
+                    <p>CSP headers, HTTPS enforcement, validation input, protection CSRF.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-item-header">♿</div>
+                <div class="portfolio-item-body">
+                    <h4>Accessibilité</h4>
+                    <p>WCAG 2.1 AA compliant, keyboard navigation, screen reader support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <h2 class="section-title">Restons en contact</h2>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+            <input type="text" placeholder="Votre nom" required>
+            <input type="email" placeholder="Votre email" required>
+            <textarea placeholder="Votre message" required></textarea>
+            <button type="submit" class="btn">Envoyer le message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 VentiStudio / Umaishi Corp. Créativité sans limites.</p>
+        <p>Email: <a href="mailto:hello@ventistudio.fr" style="color: var(--clr-primary); text-decoration: none;">hello@ventistudio.fr</a></p>
+    </footer>
+
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('Message enregistré! Merci de nous avoir contactés.');
+            e.target.reset();
+        }
+
+        // Konami code easter egg
+        const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+        let konamiIndex = 0;
+
+        document.addEventListener('keydown', (e) => {
+            konamiIndex = e.key === konamiCode[konamiIndex] ? konamiIndex + 1 : 0;
+            if (konamiIndex === konamiCode.length) {
+                document.body.style.filter = 'hue-rotate(360deg)';
+                setTimeout(() => { document.body.style.filter = 'none'; }, 1000);
+                konamiIndex = 0;
+            }
+        });
+
+        console.log('%cVentiStudio v6', 'color: #00d9ff; font-size: 20px; font-weight: bold;');
+        console.log('%cCréativité sans limites', 'color: #8b5cf6; font-size: 16px;');
+    </script>
+</body>
+</html>
